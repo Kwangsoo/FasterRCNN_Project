@@ -14,9 +14,10 @@ Here is the list of steps to create and configure the Google Cloud
 
 First, go to https://cloud.google.com/ (Figure 1) and login with your google account
 
-```
-Give examples
-```
+
+### Follow this Google Cloud Tutorial 
+* [Google Cloud Tutorial](https://github.com/Kwangsoo/FasterRCNN_Project/Docs/Google Cloud Tutorial.pdf) 
+
 
 ## 2. Install CUDA-9.0 on a fresh installation of Ubuntu 16.04
 
