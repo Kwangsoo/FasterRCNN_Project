@@ -1,49 +1,56 @@
-# FasterRCNN_Project
+# FasterRCNN Project on Google Cloud
   Working on progress....
 
 ## Getting Started
 
 Here is the list of steps to create and configure the Google Cloud
 1. Create VM Instance
-2. Install CUDA 8.0 on a fresh installation of Ubuntu 16.04
+2. Install CUDA-9.0 on a fresh installation of Ubuntu 16.04
 3. How To Install and Use Docker on Ubuntu 16.04
 
-## Please check the original ReadMe file
-See the original readme file [ReadMe.md](https://github.com/Kwangsoo/FasterRCNN_Project/blob/master/README_Default.md) 
-<div align="center">
-  <img src="demo/output/33823288584_1d21cf0a26_k_example_output.jpg" width="700px" />
-  <p>Example Mask R-CNN output.</p>
-</div>
+## 1. Create VM Instance
 
+### Prerequisites - Registration
 
-
-## Working on progress....
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+First, go to https://cloud.google.com/ (Figure 1) and login with your google account
 
 ```
 Give examples
 ```
 
-### Installing
+## 2. Install CUDA-9.0 on a fresh installation of Ubuntu 16.04
 
-A step by step series of examples that tell you have to get a development env running
+### Install Nvidia CUDA-9.0 on Ubuntu 16.04
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+- OS: Ubuntu 16.04 x86_64
+- (Optional) Uninstall old version CUDA Toolkit such as:
 
 ```
-until finished
+sudo apt-get purge cuda
+sudo apt-get purge libcudnn6
+sudo apt-get purge libcudnn6-dev
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+- Install CUDA Toolkit 9.0 and cuDNN 7.0 as follows:
+
+```
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn7_7.0.5.15-1+cuda9.0_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn7-dev_7.0.5.15-1+cuda9.0_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libnccl2_2.1.4-1+cuda9.0_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libnccl-dev_2.1.4-1+cuda9.0_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+sudo dpkg -i libcudnn7_7.0.5.15-1+cuda9.0_amd64.deb
+sudo dpkg -i libcudnn7-dev_7.0.5.15-1+cuda9.0_amd64.deb
+sudo dpkg -i libnccl2_2.1.4-1+cuda9.0_amd64.deb
+sudo dpkg -i libnccl-dev_2.1.4-1+cuda9.0_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda=9.0.176-1
+sudo apt-get install libcudnn7-dev
+sudo apt-get install libnccl-dev
+```
+
+- Restart the VM Instance to load the NVIDIA drivers.
 
 ## Running the tests
 
@@ -98,3 +105,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
+
+## Please check the original ReadMe file
+See the original readme file [ReadMe.md](https://github.com/Kwangsoo/FasterRCNN_Project/blob/master/README_Default.md) 
+<div align="center">
+  <img src="demo/output/33823288584_1d21cf0a26_k_example_output.jpg" width="700px" />
+  <p>Example Mask R-CNN output.</p>
+</div>
+
